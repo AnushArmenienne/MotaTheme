@@ -2,3 +2,34 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+
+.bg-black {
+    color:white;
+}
+
+
+/*logo*/
+
+.logo {
+    width: 216px;
+    height: 14px;
+    margin-top: 31px;
+    margin-left: 146px;
+    display: flex;
+}
+
+.droits-reserves {
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+a:-webkit-any-link {
+        cursor: pointer;
+    text-decoration: underline;
+}
+

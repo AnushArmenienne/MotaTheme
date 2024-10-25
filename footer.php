@@ -10,12 +10,11 @@
 		)
 	);
 	?>
-
-	<p>TOUS DROITS RESERVES</p>
+<p class="droits-reserves">Tous droits réservés</p>
+	
 </footer>
 </div>
 <?php wp_footer(); ?>
-
 
 
 
