@@ -20,7 +20,8 @@
                 wp_nav_menu(
                     array(
                         'theme_location' => 'header-menu',
-                        'container_class' => 'header-menu-class')
+                        'container_class' => 'header-menu-class'
+                    )
                 );
                 ?>
             </div>
@@ -44,7 +45,12 @@
                     </div>
                 </div>
             </div>
+            
+            <div id="hero">
+                <img src="http://mota-version-finale.local/wp-content/uploads/2024/10/nathalie-11-scaled.jpeg" alt="image d'un groupe">
+                <h1 class="hero-header_page-title">Photographe Event</h>
 
+            </div>
         </header>
         <div id="container">
             <main id="content" role="main">
