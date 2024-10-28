@@ -1,12 +1,22 @@
 #header {
     display: flex;
     justify-content: space-between;
+    list-style: none;
 }
 
+#menu-header {
 
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    list-style: none;
+
+}
 
 .bg-black {
-    color:white;
+    color: white;
 }
 
 
@@ -27,9 +37,62 @@
     font-size: 16px;
 }
 
-
-a:-webkit-any-link {
-        cursor: pointer;
-    text-decoration: underline;
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
 }
 
+/*menu de navigation du header*/ 
+#menu-item-16 {
+   
+    margin-right: 50px;
+    width: 69px;
+    height: 24px;
+    top: 28px;
+    left: 990px;
+    gap: 0px;
+    opacity: 0px;
+    
+}
+
+#menu-item-17 {
+    
+    margin-right: 50px;
+    width: 69px;
+height: 24px;
+top: 28px;
+left: 990px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+#menu-item-18 {
+  
+    margin-right: 50px;
+    width: 69px;
+    height: 24px;
+    top: 28px;
+    left: 990px;
+    gap: 0px;
+    opacity: 0px;
+    
+}
+
+a {
+    
+    color:  black !important;
+    text-decoration: none !important;
+    width: 216px;
+    height: 14px;
+    margin-top: 31px;
+    margin-left: 146px;
+    display: flex;
+    
+}
