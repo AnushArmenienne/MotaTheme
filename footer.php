@@ -10,7 +10,7 @@
 		)
 	);
 	?>
-<p class="droits-reserves">Tous droits réservés</p>
+<p class="droits-reserves">TOUS DROITS RESERVES</p>
 	
 </footer>
 </div>
