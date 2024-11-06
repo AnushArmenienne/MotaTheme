@@ -168,11 +168,44 @@ height: 70px;
 
 
 .modalphoto {
-    width: 279.96px;
-    height: 48.05px;
-    left: 566px;
-    gap: 0px;
-    opacity: 0px;
-    
+    width: 100%;
+    margin:20px 0;
+       
   }
 
+  .bg-background {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+ 
+  .modal-dialog {
+    display: flex;
+    justify-items: center;
+    border: 5px solid black;
+    background-color: white;
+}
+
+.wpcf7-form-control {
+    width: 263px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.wpcf7-form {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.wpcf7-submit {
+    height: 50px;
+}
