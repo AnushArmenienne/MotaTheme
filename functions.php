@@ -2,7 +2,7 @@
 // Ajout style CSS et JS
 function ajout_CSS_script() {
     // JS
-    wp_enqueue_script('script-global', get_template_directory_uri() . '/scripts.js', array('jquery'), '1.1', true);
+ wp_enqueue_script('script-global', get_template_directory_uri() . '/scripts.js', array('jquery'), '1.1', true);
     // CSS
     wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0');
 }
@@ -21,7 +21,6 @@ function register_my_menu() {
     );
     }
 add_action( 'init', 'register_my_menu' );
-
 
 
 
