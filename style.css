@@ -130,11 +130,11 @@ a {
     width: 1440px;
     Height: 40px;
     justify-content: center;
-   }
+}
 
 .footer-menu-class {
-margin-right: 70px;
-height: 70px;
+    margin-right: 70px;
+    height: 70px;
 
 }
 
@@ -155,7 +155,7 @@ height: 70px;
     font-weight: 400;
     line-height: 23.7px;
     height: 24px;
-    
+
 }
 
 .droits-reserves {
@@ -169,21 +169,21 @@ height: 70px;
 
 .modalphoto {
     width: 100%;
-    margin:20px 0;
-       
-  }
+    margin: 20px 0;
 
-  .bg-background {
+}
+
+.bg-background {
     background-color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100%;
-  }
+}
 
- 
-  .modal-dialog {
+
+.modal-dialog {
     display: flex;
     justify-items: center;
     border: 5px solid black;
@@ -195,12 +195,12 @@ height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .wpcf7-form {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -212,35 +212,49 @@ height: 70px;
 
 /**PAGE PHOTO**/
 
-.imagemariée {
+.images {
     width: 563px;
-    height: 844px;
-    top: 118px;
-    left: 731px;
-    gap: 0px;
-    opacity: 0px;
+    float: right;
     
 }
 
-.titre {
-   
-font-family: Space Mono;
-font-size: 66px;
-font-style: italic;
-font-weight: 400;
-line-height: 58px;
-text-align: left;
+#content {
+  background-color: aquamarine;
+         }
+
+
+.texte-contact {
+
+font-family: Poppins;
+font-size: 14px;
+font-weight: 300;
+line-height: 21px;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
-width: 420px;
-height: 116px;
-gap: 0px;
-opacity: 0px;
+width: 197px;
+height: 21px;
+
+
+}
+
+.titre {
+
+    font-family: Space Mono;
+    font-size: 66px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 58px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 420px;
+    height: 116px;
+
 
 }
 
 .reference {
-    
+
     font-family: Space Mono;
     font-size: 14px;
     font-weight: 400;
@@ -249,11 +263,11 @@ opacity: 0px;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    
+
 }
 
 .categorie {
-   
+
     font-family: Space Mono;
     font-size: 14px;
     font-weight: 400;
@@ -262,12 +276,12 @@ opacity: 0px;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    
+
 }
 
 
 .format {
-   
+
     font-family: Space Mono;
     font-size: 14px;
     font-weight: 400;
@@ -276,27 +290,71 @@ opacity: 0px;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    
+
 
 }
+
 .type {
-    
-font-family: Space Mono;
-font-size: 14px;
-font-weight: 400;
-line-height: 20.73px;
-letter-spacing: 0.1em;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
+
+    font-family: Space Mono;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.73px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 
 }
 
 
-.description {
-    
-    Width :420px;
-    Height: 321px;
-  
-    
+
+
+
+.bouton {
+    background-color: #D8D8D8;
+    width: 272px;
+    height: 50px;
+    box-shadow: 0px 2px 1px 0px #00000005;
+
+       }
+
+
+
+.date {
+
+    font-family: Space Mono;
+    font-size: 66px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 58px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 420px;
+    height: 116px;
+
+
+}
+
+
+.trait1 {
+    border: 1px solid #000000;
+    width: 564px;
+
+
+
+}
+
+.trait2 {
+    border: 1px solid #000000;
+    width: 1148px;
+
+
+}
+
+
+.phrasebouton {
+display: flex;
+
 }
