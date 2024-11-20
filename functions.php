@@ -24,3 +24,40 @@ add_action( 'init', 'register_my_menu' );
 
 
 
+
+
+// Enregistrement des taxonomies
+function create_photo_taxonomies() {
+    // Taxonomie pour les catégories
+    register_taxonomy('categorie', 'photo', array(
+        'labels' => array(
+            'name' => 'Catégories',
+            'singular_name' => 'Catégorie',
+            'all_items' => 'Toutes les catégories',
+            'edit_item' => 'Modifier la catégorie',
+            'view_item' => 'Voir la catégorie',
+            'add_new_item' => 'Ajouter une nouvelle catégorie',
+        ),
+        'public' => true,
+        'hierarchical' => true,
+        'show_in_rest' => true, // Nécessaire pour que l'API REST les supporte
+    ));
+
+    // Taxonomie pour les formats
+    register_taxonomy('format', 'photo', array(
+        'labels' => array(
+            'name' => 'Formats',
+            'singular_name' => 'Format',
+            'all_items' => 'Tous les formats',
+            'edit_item' => 'Modifier le format',
+            'view_item' => 'Voir le format',
+            'add_new_item' => 'Ajouter un nouveau format',
+        ),
+        'public' => true,
+        'hierarchical' => true,
+        'show_in_rest' => true, // Nécessaire pour que l'API REST les supporte
+    ));
+}
+add_action('init', 'create_photo_taxonomies');
+
+

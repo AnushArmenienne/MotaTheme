@@ -4,88 +4,145 @@ while (have_posts()):
     the_post();
 ?>
 
+    <div class="pagesingle">
+        <div class="blocgauche">
+            <h1 class="titre"> <?php the_title(); ?> </h1>
+
+            <div class="reference">REFERENCE: <?php the_field('reference'); ?>
+            </div>
 
 
-    <h1 class="titre"> <?php the_title(); ?> </h1>
+            <div class="categorie">
+                CATEGORIE:
+                <?php
 
-    <div class="reference">REFERENCE: <?php the_field('reference'); ?></div>
-
-
-    <div class="categorie">
-        CATEGORIE:
-        <?php
-
-        $categories = get_the_terms(get_the_ID(), 'categorie');
-        if (!empty($categories) && !is_wp_error($categories)) {
-            $categorie_names = wp_list_pluck($categories, 'name');
-            echo implode(', ', $categorie_names);
-        } else {
-        }
-        ?>
-    </div>
+                $categories = get_the_terms(get_the_ID(), 'categories');
+                if (!empty($categories) && !is_wp_error($categories)) {
+                    $categorie_names = wp_list_pluck($categories, 'name');
+                    echo implode(', ', $categorie_names);
+                } else {
+                }
+                ?>
+            </div>
 
 
-    <div class="format">
-        FORMAT:
-        <?php
+            <div class="format">
+                FORMAT:
+                <?php
 
-        $formats = get_the_terms(get_the_ID(), 'formats');
-        if (!empty($formats) && !is_wp_error($formats)) {
-            $format_names = wp_list_pluck($formats, 'name');
-            echo implode(', ', $format_names);
-        } else {
-        }
-        ?>
-    </div>
+                $formats = get_the_terms(get_the_ID(), 'formats');
+                if (!empty($formats) && !is_wp_error($formats)) {
+                    $format_names = wp_list_pluck($formats, 'name');
+                    echo implode(', ', $format_names);
+                } else {
+                }
+                ?>
+            </div>
 
-    <div class="type">TYPE: <?php the_field('type'); ?></div>
-    <h1 class="date"> <?php the_date(); ?> </h1>
+            <div class="type">TYPE: <?php the_field('type'); ?></div>
 
-
-
-    <div>
-        <?php
-        $image_id = get_field('image'); // On récupère cette fois l'ID
-
-        if ($image_id) {
-            echo wp_get_attachment_image($image_id, 'full');
-            echo '<img class="images" src="' . esc_url($image_id) . '" alt="">';
-        }
-
-        ?>
-    </div>
-
-    <hr class="trait1">
-    <div class="phrasebouton">
-        <div class="texte-contact">
-            <p>Cette photo vous intéresse ?</p>
-        </div>
-
-
-
-        <!-- Bouton Contact -->
-        <button type="button" class="bouton" data-bs-toggle="modal" data-bs-target="#videoModal">
-            Contact
-        </button>
-
-        <!-- Modal -->
-        <div class="modal" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="bg-background border-0">
-                    <img class="modalphoto" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Contact-header.png" alt="image header de contact" id="contact">
-
-                    <div class="modal-body overflow-hidden p-0">
-                        <div class="rounded-bottom-4" id="videoplayer">
-                            <?php echo do_shortcode('[contact-form-7 id="2dca0ca" title="Formulaire de contact 1"]'); ?>
-                        </div>
-                    </div>
+            <div class="annee">
+                ANNEE:
+                <?php the_date("Y"); ?>
+            </div>
+            <div class="barre">
+                <hr>
+            </div>
+            <div class="bloccontact">
+                <div class="texte-contact">
+                    <p>Cette photo vous intéresse ?</p>
                 </div>
+                <!-- Bouton Contact -->
+                <button type="button" class="bouton" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    Contact
+                </button>
+                <?php include get_template_directory() . '/templates_part/modale.php'; ?>
             </div>
         </div>
-    </div>
-    <hr class="trait2">
+        <div class="blocdroit">
+            <?php
+            $image_id = get_field('image'); // On récupère cette fois l'ID
 
-<?php
+            if ($image_id) {
+                echo wp_get_attachment_image($image_id, 'full');
+                echo '<img class="images" src="' . esc_url($image_id) . '" alt="">';
+            }
+
+            ?>
+            <div>
+            <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-6@2x.png" alt="fleche">
+                <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-7@2x.png" alt="fleche1">
+                
+            </div>
+        </div>
+
+
+    </div>
+
+     <div class="pagesingleend">
+        <div class="barre">
+            <hr>
+        </div>
+
+        <!-- Section Photos Apparentées -->
+        <div>
+            <h3>VOUS AIMEREZ AUSSI</h3>
+
+
+            <div class="image-container">
+                <?php
+
+                // Récupérer le slug de la catégorie de la photo actuelle
+                $terms = get_the_terms(get_the_ID(), 'categorie');
+                if ($terms && !is_wp_error($terms)) {
+                    $slug = $terms[0]->slug; // Prend le slug de la première catégorie (si plusieurs, ajustez selon vos besoins)
+                } else {
+                    $slug = ''; // Définit un slug par défaut ou gère l'absence de catégorie
+                }
+
+                // Récupère deux photos aléatoires de la même catégorie que la photo actuelle.
+                $args_related_photos = array(
+                    'post_type' => 'photos',
+                    'posts_per_page' => 2,
+                    'orderby' => 'rand',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'categorie',
+                            'field' => 'slug',
+                            'terms' => $slug, // Utilise le slug de la catégorie de la photo actuelle
+                        ),
+                    ),
+                );
+
+                $related_photos_query = new WP_Query($args_related_photos);
+
+                while ($related_photos_query->have_posts()) :
+                    $related_photos_query->the_post();
+
+                    $image_id = get_field('image'); // On récupère cette fois l'ID
+
+                    if ($image_id) {
+                        echo wp_get_attachment_image($image_id, 'full');
+                        echo "<img src=\"$image_id\" class=\"imagemariée\" alt=\"\">";
+                    }
+                endwhile;
+                wp_reset_postdata(); // Réinitialise la requête globale
+                ?>
+            </div>
+            <div class="related-image">
+                <a href="<?php the_permalink(); ?>">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="image-wrapper">
+                        <?php endif; ?>
+                        <?php the_post_thumbnail(); ?>
+                </a>
+            </div>
+
+
+        </div>
+        </div>
+    <?php
+
 endwhile;
 get_footer();
-?>
+    ?>
