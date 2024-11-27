@@ -28,11 +28,10 @@ add_action( 'init', 'register_my_menu' );
 
 // Enregistrement des taxonomies
 function create_photo_taxonomies() {
-    // Taxonomie pour les catégories
     register_taxonomy('categorie', 'photo', array(
         'labels' => array(
-            'name' => 'Catégories',
-            'singular_name' => 'Catégorie',
+            'name' => 'categories',
+            'singular_name' => 'categorie',
             'all_items' => 'Toutes les catégories',
             'edit_item' => 'Modifier la catégorie',
             'view_item' => 'Voir la catégorie',
@@ -59,5 +58,7 @@ function create_photo_taxonomies() {
     ));
 }
 add_action('init', 'create_photo_taxonomies');
+
+
 
 

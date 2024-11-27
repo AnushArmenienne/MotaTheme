@@ -227,19 +227,6 @@ a {
 }
 
 
-.texte-contact {
-
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 21px;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    width: 197px;
-    height: 21px;
-
-
-}
 
 .titre {
 
@@ -264,11 +251,13 @@ a {
 .type,
 .categorie,
 .reference,
-.date {
+.date,
+.annee {
 
     font-family: Space Mono;
     font-size: 14px;
     font-weight: 400;
+    text-transform: uppercase;
     line-height: 20.73px;
     letter-spacing: 0.1em;
     text-align: left;
@@ -336,14 +325,9 @@ hr {
 
 h3 {
 
-    font-family: Space Mono;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26.66px;
-    letter-spacing: 0.1em;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    width: 563px;
+    height: auto;
+    margin-right: -80px;
 
 }
 
@@ -357,9 +341,6 @@ h3 {
 
 .fleche {
     width: 25px;
-
-
-
 }
 
 .photo-gallery {
@@ -379,8 +360,7 @@ h3 {
     /* Évite les espaces blancs sous les images */
 }
 
-img
-{
+img {
     object-fit: cover;
 }
 
@@ -481,8 +461,7 @@ label {
 
 /* Appliquer un style commun aux sélecteurs */
 .custom-select {
-    appearance: none;
-    /* Supprimer le style par défaut */
+    
     -webkit-appearance: none;
     /* Compatibilité WebKit */
     -moz-appearance: none;
@@ -550,4 +529,40 @@ label {
 .bloccontact {
     display: flex;
     justify-content: space-between;
+}
+
+#bouton-charger-plus {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 272px;
+    /* Largeur du bouton */
+    height: 50px;
+    /* Hauteur du bouton */
+    background-color: #D8D8D8;
+    color: #000000;
+    text-decoration: none;
+    /* Supprime Décoration de texte */
+    border-radius: 2px;
+    font-weight: bold;
+    transition: .3s ease-in-out;
+    /* Transition de 0.3s - accélération/décélération */
+    cursor: pointer;
+    /* Curseur au survol */
+    font-family: Space Mono;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17.77px;
+    letter-spacing: 0em;
+    text-align: center;
+    border: none;
+    /* Bordure du bouton */
+    margin-top: 20px;
+}
+
+.trierpar {
+
+margin-inline: 280px;
+
 }

@@ -60,7 +60,7 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
                     </select>
 
 
-                    <select name="date-sort" id="date-sort" class="custom-select">
+                    <select name="date-sort" id="date-sort" class="custom-select trierpar">
                         <option value="DESC">TRIER PAR</option>
                         <option value="DESC">Du plus récent au plus ancien</option>
                         <option value="ASC">Du plus ancien au plus récent</option>
@@ -156,6 +156,22 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
 
 
                 <button id="bouton-charger-plus">Charger plus</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
         </div>
 
 

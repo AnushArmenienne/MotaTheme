@@ -12,15 +12,17 @@ while (have_posts()):
             </div>
 
 
-            <div class="categorie">
-                CATEGORIE:
-                <?php
+           
 
-                $categories = get_the_terms(get_the_ID(), 'categories');
+            <div class="categorie">
+               CATEGORIE:
+                <?php
+                $categories = get_the_terms(get_the_ID(), 'cateegories'); // Utiliser 'categorie', pas 'categories'
                 if (!empty($categories) && !is_wp_error($categories)) {
                     $categorie_names = wp_list_pluck($categories, 'name');
-                    echo implode(', ', $categorie_names);
+                    echo implode(', ', $categorie_names); // Affiche les noms des catégories
                 } else {
+                    echo 'Aucune catégorie'; // Affichage si aucune catégorie n'est assignée
                 }
                 ?>
             </div>
@@ -35,6 +37,7 @@ while (have_posts()):
                     $format_names = wp_list_pluck($formats, 'name');
                     echo implode(', ', $format_names);
                 } else {
+                    echo 'Aucun format'; // Affichage si aucun format n'est assigné
                 }
                 ?>
             </div>
@@ -70,9 +73,9 @@ while (have_posts()):
 
             ?>
             <div>
-            <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-6@2x.png" alt="fleche">
+                <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-6@2x.png" alt="fleche">
                 <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-7@2x.png" alt="fleche1">
-                
+
             </div>
         </div>
 
@@ -140,9 +143,9 @@ while (have_posts()):
 
 
         </div>
-        </div>
-    <?php
+    </div>
+<?php
 
 endwhile;
 get_footer();
-    ?>
+?>
