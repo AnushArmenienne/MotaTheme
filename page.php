@@ -158,6 +158,13 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
                 <button id="bouton-charger-plus">Charger plus</button>
 
 
+                <button
+	class="js-load-comments"
+    data-postid="<?php echo get_the_ID(); ?>"
+    data-nonce="<?php echo wp_create_nonce('capitaine_load_comments'); ?>"
+    data-action="capitaine_load_comments"
+    data-ajaxurl="<?php echo admin_url( 'admin-ajax.php' ); ?>"
+>
 
 
 
@@ -171,7 +178,17 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
 
 
 
-                
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
 
