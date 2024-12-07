@@ -12,7 +12,7 @@
     <div id="wrapper" class="hfeed">
         <header id="header" role="banner">
             <div id="branding">
-                <img class="logo" src="http://mota-version-finale.local/wp-content/uploads/2024/10/Logo.png" alt="">
+                <img class="logo" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Logo.png" alt="">
             </div>
 
             <div id="menu">

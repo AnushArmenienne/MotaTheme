@@ -59,9 +59,18 @@ while (have_posts()):
                 <button type="button" class="bouton" data-bs-toggle="modal" data-bs-target="#videoModal">
                     Contact
                 </button>
+
+
+
+                
                 <?php include get_template_directory() . '/templates_part/modale.php'; ?>
             </div>
         </div>
+
+
+
+
+        
         <div class="blocdroit">
             <?php
             $image_id = get_field('image'); // On récupère cette fois l'ID
