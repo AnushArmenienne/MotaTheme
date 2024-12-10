@@ -12,10 +12,10 @@ while (have_posts()):
             </div>
 
 
-           
+
 
             <div class="categorie">
-               CATEGORIE:
+                CATEGORIE:
                 <?php
                 $categories = get_the_terms(get_the_ID(), 'cateegories'); // Utiliser 'categorie', pas 'categories'
                 if (!empty($categories) && !is_wp_error($categories)) {
@@ -59,15 +59,19 @@ while (have_posts()):
                 <button type="button" class="bouton" data-bs-toggle="modal" data-bs-target="#videoModal">
                     Contact
                 </button>
-
-
-
-                
                 <?php include get_template_directory() . '/templates_part/modale.php'; ?>
+                <?php
+                // Récupérer la valeur ACF pour la référence
+                $reference = get_field('reference');
+                if ($reference) {
+                    echo '<script type="text/javascript">';
+                    echo 'var acfReferencePhoto = "' . esc_js($reference) . '";'; // Transmettre la référence à JS
+                    echo '</script>';
+                }
+                ?>
+
             </div>
         </div>
-
-
 
 
         
@@ -86,6 +90,14 @@ while (have_posts()):
                 <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-7@2x.png" alt="fleche1">
 
             </div>
+
+
+
+
+
+
+
+            
         </div>
 
 

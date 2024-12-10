@@ -89,7 +89,7 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
 
 
 
-            // Récupère deux photos aléatoires de la même catégorie que la photo actuelle.
+            // Récupère 8 photos aléatoires
             $args_related_photos = array(
                 'post_type' => 'photos',
                 'posts_per_page' => 8,
@@ -106,7 +106,13 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
 
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'full');
-                    echo "<img src=\"$image_id\" alt=\"\">";
+                    
+                  
+                    $post_permalink = get_permalink(); // Exemple pour obtenir un lien permanent WordPress
+                    
+                    echo "<a href=\"" . esc_url($post_permalink) . "\"><img src=\"$image_id\" alt=\"\"></a>";
+                    
+                    
                 }
             endwhile;
             wp_reset_postdata(); // Réinitialise la requête globale

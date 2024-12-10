@@ -120,3 +120,6 @@ function load_images_from_photos_cpt() {
 }
 add_action('wp_ajax_load_images', 'load_images_from_photos_cpt');
 add_action('wp_ajax_nopriv_load_images', 'load_images_from_photos_cpt');
+
+
+
