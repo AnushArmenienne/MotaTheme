@@ -369,9 +369,6 @@ h3 {
     /* Évite les espaces blancs sous les images */
 }
 
-img {
-    object-fit: cover;
-}
 
 
 
@@ -589,21 +586,20 @@ label {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 20px auto;
-    max-width: 800px;
-    justify-content: center;
-    width: 1148px;
+    justify-items: center;
     height: 2040px;
     gap: 20px;
-
-
+    width: 100%;  /* Prend toute la largeur disponible */
+    
 }
 
 .accueil-content img {
-
     border-radius: 8px;
     object-fit: cover;
     width: 564px;
     height: 495px;
-
+    display: flex;
+    justify-items: center;
 
 }
+

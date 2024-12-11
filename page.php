@@ -107,7 +107,7 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'full');
                     
-                  
+                    
                     $post_permalink = get_permalink(); // Exemple pour obtenir un lien permanent WordPress
                     
                     echo "<a href=\"" . esc_url($post_permalink) . "\"><img src=\"$image_id\" alt=\"\"></a>";

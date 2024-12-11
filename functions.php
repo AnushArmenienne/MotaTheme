@@ -111,11 +111,12 @@ function load_images_from_photos_cpt() {
     }
 
     wp_reset_postdata();
-
+    $has_more = ($paged * $query_args['posts_per_page']) < $query->found_posts;
     // Envoyer le HTML et la page suivante
     wp_send_json_success([
         'html'  => $html,
         'paged' => $paged + 1,
+        'has_more' => $has_more,
     ]);
 }
 add_action('wp_ajax_load_images', 'load_images_from_photos_cpt');
