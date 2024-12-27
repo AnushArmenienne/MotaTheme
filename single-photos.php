@@ -74,7 +74,7 @@ while (have_posts()):
         </div>
 
 
-        
+
         <div class="blocdroit">
             <?php
             $image_id = get_field('image'); // On récupère cette fois l'ID
@@ -85,10 +85,71 @@ while (have_posts()):
             }
 
             ?>
-            <div>
-                <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-6@2x.png" alt="fleche">
-                <img class="fleche" src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-7@2x.png" alt="fleche1">
 
+
+
+            <?php
+            // Récupère l'ID de la publication actuelle.
+            $current_post_id = get_the_ID();
+
+            // Récupère toutes les publications de type 'photo'.
+            $args = array(
+                'post_type' => 'photos',
+                'posts_per_page' => -1,
+                'order' => 'ASC',
+            );
+            $all_photo_posts = get_posts($args);
+
+            // Trouve l'index de la publication actuelle dans le tableau de toutes les publications de photos.
+            $current_post_index = array_search($current_post_id, array_column($all_photo_posts, 'ID'));
+
+            // Calcule les index des publications précédentes et suivantes.
+            $prev_post_index = $current_post_index - 1;
+            $next_post_index = $current_post_index + 1;
+
+            // Récupère les publications précédentes et suivantes.
+            $prev_post = ($prev_post_index >= 0) ? $all_photo_posts[$prev_post_index] : end($all_photo_posts);
+            $next_post = ($next_post_index < count($all_photo_posts)) ? $all_photo_posts[$next_post_index] : reset($all_photo_posts);
+
+            $prev_permalink = get_permalink($prev_post);
+            $next_permalink = get_permalink($next_post);
+
+            // Récupère les miniatures des publications précédentes et suivantes.
+
+            $prev_thumbnail = get_the_post_thumbnail($prev_post, 'thumbnail');
+            $next_thumbnail = get_the_post_thumbnail($next_post, 'thumbnail');
+
+            if (!$prev_thumbnail || !$next_thumbnail) {
+                error_log('Thumbnail URL missing for previous or next post.');
+            }
+            ?>
+
+
+            <div class="thumbnail-container">
+                <!-- Miniature dynamique pour les flèches -->
+                <div id="thumbnail-preview" class="thumbnail-preview"></div>
+
+                <div class="fleches">
+                    <!-- Flèche gauche (précédent) -->
+                    <a href="<?php echo esc_url($prev_permalink); ?>"
+                        class="arrow-link"
+                        data-thumbnail="<?php echo esc_url(get_the_post_thumbnail_url($prev_post, 'thumbnail')); ?>"
+                        id="prev-arrow-link">
+                        <img class="fleche arrow-img-gauche"
+                            src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-6@2x.png"
+                            alt="Précédent" />
+                    </a>
+
+                    <!-- Flèche droite (suivant) -->
+                    <a href="<?php echo esc_url($next_permalink); ?>"
+                        class="arrow-link"
+                        data-thumbnail="<?php echo esc_url(get_the_post_thumbnail_url($next_post, 'thumbnail')); ?>"
+                        id="next-arrow-link">
+                        <img class="fleche arrow-img-droite"
+                            src="http://mota-version-finale.local/wp-content/uploads/2024/11/Line-7@2x.png"
+                            alt="Suivant" />
+                    </a>
+                </div>
             </div>
 
 
@@ -97,10 +158,9 @@ while (have_posts()):
 
 
 
-            
+
+
         </div>
-
-
     </div>
 
      <div class="pagesingleend">
@@ -144,6 +204,7 @@ while (have_posts()):
                     $related_photos_query->the_post();
 
                     $image_id = get_field('image'); // On récupère cette fois l'ID
+                   
 
                     if ($image_id) {
                         echo wp_get_attachment_image($image_id, 'full');
@@ -153,14 +214,7 @@ while (have_posts()):
                 wp_reset_postdata(); // Réinitialise la requête globale
                 ?>
             </div>
-            <div class="related-image">
-                <a href="<?php the_permalink(); ?>">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="image-wrapper">
-                        <?php endif; ?>
-                        <?php the_post_thumbnail(); ?>
-                </a>
-            </div>
+           
 
 
         </div>

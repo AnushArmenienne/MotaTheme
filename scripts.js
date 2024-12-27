@@ -101,3 +101,43 @@ document.addEventListener("DOMContentLoaded", function () {
 })(jQuery);
 
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Récupérer les éléments
+    const arrowLinks = document.querySelectorAll('.arrow-link');
+    const thumbnailPreview = document.getElementById('thumbnail-preview');
+
+    arrowLinks.forEach(link => {
+        link.addEventListener('mouseover', function () {
+            
+            // Récupérer l'URL de la miniature depuis l'attribut data-thumbnail
+            const thumbnailUrl = link.hasAttribute('data-thumbnail') ? link.getAttribute('data-thumbnail') : null;
+           
+                // Afficher la miniature
+                thumbnailPreview.style.display = 'flex';
+                if (thumbnailUrl) {
+                    
+                thumbnailPreview.style.backgroundImage = `url(${thumbnailUrl})`;
+                
+            } else {
+                console.error('thumbnailUrl est vide ou invalide.');
+            }
+
+                // Positionner la miniature dynamiquement par rapport à la flèche
+                const rect = link.getBoundingClientRect();
+                thumbnailPreview.style.left = `${rect.left + window.scrollX}px`;
+                thumbnailPreview.style.top = `${rect.top + window.scrollY }px`; // Ajustez la hauteur si nécessaire
+            
+        });
+
+       link.addEventListener('mouseout', function () {
+            // Cacher la miniature lorsque la souris quitte la flèche
+           thumbnailPreview.style.display = 'none';
+           thumbnailPreview.style.backgroundImage = '';
+        }); 
+    });
+});
+
+
+//lightbox

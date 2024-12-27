@@ -87,8 +87,6 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
         <div class="accueil-content">
             <?php
 
-
-
             // Récupère 8 photos aléatoires
             $args_related_photos = array(
                 'post_type' => 'photos',
@@ -125,6 +123,12 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
         <div class="photos-container">
     <!-- Les images apparaîtront ici -->
 </div>
+
+
+
+
+
+
 
 <button id="bouton-charger-plus" 
         class="js-load-photos" 

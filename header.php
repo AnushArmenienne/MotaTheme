@@ -7,6 +7,7 @@
     <?php wp_head(); ?>
 </head>
 
+
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div id="wrapper" class="hfeed">
@@ -33,6 +34,7 @@
 
             <?php include get_template_directory() . '/templates_part/modale.php'; ?>
 
+           
 
 
         </header>
