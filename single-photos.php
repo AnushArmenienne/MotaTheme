@@ -214,8 +214,7 @@ while (have_posts()):
                 wp_reset_postdata(); // Réinitialise la requête globale
                 ?>
             </div>
-           
-
+                        
 
         </div>
     </div>
