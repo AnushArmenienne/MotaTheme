@@ -115,13 +115,11 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
 
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'full');
-                    
-                    
+
+
                     $post_permalink = get_permalink(); // Exemple pour obtenir un lien permanent WordPress
-                    
+
                     echo "<a href=\"" . esc_url($post_permalink) . "\"><img src=\"$image_id\" alt=\"\"></a>";
-                    
-                    
                 }
             endwhile;
             wp_reset_postdata(); // Réinitialise la requête globale
@@ -132,8 +130,8 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
 
 
         <div class="photos-container">
-    <!-- Les images apparaîtront ici -->
-</div>
+            <!-- Les images apparaîtront ici -->
+        </div>
 
 
 
@@ -141,20 +139,15 @@ wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d
 
 
 
-<button id="bouton-charger-plus" 
-        class="js-load-photos" 
-        data-nonce="<?php echo wp_create_nonce('load_images_nonce'); ?>" 
-        data-ajaxurl="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-    Charger plus
-</button>
+        <button id="bouton-charger-plus"
+            class="js-load-photos"
+            data-nonce="<?php echo wp_create_nonce('load_images_nonce'); ?>"
+            data-ajaxurl="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
+            Charger plus
+        </button>
 
 
 
-<h1>Petits mammifères</h1>
-    <img src="https://th.bing.com/th/id/OIP.znb6j31AfV5zdIbAdcvk-QHaFj?rs=1&pid=ImgDetMain" alt="Hamster">
-    <img src="https://www.jardiner-malin.fr/wp-content/uploads/2022/05/herisson-jardin.jpg" alt="Hérisson">
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, magni eligendi. Sequi possimus enim exercitationem ipsa. Adipisci optio nesciunt atque. Molestias ipsam iusto sapiente repellat praesentium voluptates necessitatibus impedit maxime? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam maxime quis perspiciatis itaque aspernatur voluptates, explicabo veniam reprehenderit doloribus ut odio debitis facilis vero quaerat ipsa. Iure excepturi quae fugiat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam iste ducimus iusto voluptatibus quaerat nesciunt maxime beatae sed quod dolor repudiandae ipsa, ad consectetur quas possimus asperiores nemo autem id.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex placeat illo consequuntur adipisci, illum nobis nostrum unde ratione optio corrupti veritatis aut accusamus ab nam? Perferendis veniam quae provident autem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, officia atque ullam id explicabo quidem enim eveniet ut, reiciendis consequuntur ipsam accusantium quibusdam officiis iusto quasi rem, neque sint. Officia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus voluptas, dolores aperiam laudantium quam delectus modi, sunt natus temporibus iste omnis veritatis perspiciatis repellat error, quod recusandae nemo ex fugiat.</p>
 
 
 

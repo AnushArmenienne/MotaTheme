@@ -56,7 +56,7 @@ ul {
 }
 
 
-#menu-item-51 {
+#menu-item-146 {
     margin-right: 50px;
     width: 69px;
     height: 24px;
@@ -627,32 +627,12 @@ label {
     display: grid;
 }
 
+.test  {
+border: 2px solid red;
+position: absolute;
+z-index: 1000;
+}
+
+
 
 /*lightbox*/
-
-img[src*=vignette] {
-    margin-right: 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-#grande {
-    transition-property: opacity;
-    transition-timing-function: ease-in-out;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#grande>img {
-    max-width: 80vw;
-    max-height: 80vh;
-}
