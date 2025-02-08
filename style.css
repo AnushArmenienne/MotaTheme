@@ -125,46 +125,28 @@ a {
 /*menu de navigation du footer*/
 
 #footer {
-    display: flex;
-    list-style: none;
-    width: 1440px;
-    Height: 40px;
-    justify-content: center;
-}
-
-.footer-menu-class {
-    margin-right: 70px;
-    height: 70px;
 
 }
+
+
 
 #menu-footer {
 
-    display: flex;
-    font-family: 'Space Mono', monospace;
-    font-weight: 400;
-    font-size: 16px;
-    list-style: none;
-    margin-right: 10px;
+       font-family: 'Space Mono', monospace;
+   font-style: none;
 }
 
-#menu-item-19,
-#menu-item-82 {
-    font-family: Space Mono;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 23.7px;
-    height: 24px;
 
-}
 
 .droits-reserves {
     font-family: 'Space Mono', monospace;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 16px;
-    margin-top: 30px;
 }
+
+
+
+
+
+
 
 
 .modalphoto {
@@ -627,11 +609,6 @@ label {
     display: grid;
 }
 
-.test  {
-border: 2px solid red;
-position: absolute;
-z-index: 1000;
-}
 
 
 
